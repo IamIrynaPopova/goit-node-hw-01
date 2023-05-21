@@ -24,7 +24,6 @@ async function getContactById(contactId) {
     console.error(err);
   }
 }
-// getContactById("drsAJ4SHPYqZeG-83QTVW");
 
 async function addContact(name, email, phone) {
   try {
@@ -43,8 +42,6 @@ async function addContact(name, email, phone) {
   }
 }
 
-// addContact("Iryna Popova", "irina@gmail.com", "(748) 202-5555");
-
 async function removeContact(contactId) {
   try {
     const data = await listContacts();
@@ -58,8 +55,6 @@ async function removeContact(contactId) {
     console.error(err);
   }
 }
-
-// removeContact("drsAJ4SHPYqZeG-83QTVW");
 
 module.exports = {
   listContacts,
