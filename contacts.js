@@ -2,30 +2,48 @@ const fs = require("fs").promises;
 const path = require("path");
 
 const contactsPath = path.join("./db", "contacts.json");
-const contacts = fs
-  .readFile(contactsPath)
-  .then((data) => {
-    const contacts = JSON.parse(data.toString());
-    return listContacts(contacts);
-  })
-  .catch((err) => console.error(err));
 
-function listContacts(data) {
-  console.log(typeof data);
-  data.map((contact) => {
-    const { id, name, email, phone } = contact;
-    return console.table(contact);
-  });
+async function listContacts() {
+  try {
+    const data = await fs.readFile(contactsPath);
+    const contacts = JSON.parse(data.toString());
+    console.table(contacts);
+    return contacts;
+  } catch (err) {
+    console.error(err);
+  }
 }
 
-// function getContactById(contactId) {
-//   // ...твій код
+// async function getContactById(contactId) {
+//   try {
+//     const data = await listContacts();
+//     const contact = await data.find((contact) => contact.id === contactId);
+//     return console.table(contact);
+//   } catch (err) {
+//     console.error(err);
+//   }
 // }
+// getContactById("drsAJ4SHPYqZeG-83QTVW");
 
-// function removeContact(contactId) {
-//   // ...твій код
-// }
 
 // function addContact(name, email, phone) {
 //   // ...твій код
 // }
+
+
+
+// async function removeContact(contactId) {
+//   try {
+//     const data = await listContacts();
+//     const filterContacts = await data.filter(
+//       (contact) => contact.id !== contactId
+//     );
+//     await fs.writeFile(contactsPath, JSON.stringify(filterContacts));
+//     console.log(`Contact with id "${contactId}" was deleted`);
+//     return filterContacts;
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+// removeContact("drsAJ4SHPYqZeG-83QTVW");
