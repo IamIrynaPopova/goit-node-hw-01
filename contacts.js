@@ -19,7 +19,7 @@ async function getContactById(contactId) {
   try {
     const data = await listContacts();
     const contact = await data.find((contact) => contact.id === contactId);
-    return console.table(contact);
+    return console.log(contact);
   } catch (err) {
     console.error(err);
   }
@@ -28,13 +28,15 @@ async function getContactById(contactId) {
 async function addContact(name, email, phone) {
   try {
     const data = await listContacts();
-    const updateContacts = await data.push({
+    data.push({
       id: uuidv4(),
       name,
       email,
       phone,
     });
     await fs.writeFile(contactsPath, JSON.stringify(data));
+    console.log("Update contacts:");
+    console.table(data);
     console.log(`Contact "${name}" was added to the phonebook`);
     return data;
   } catch (err) {
@@ -49,6 +51,8 @@ async function removeContact(contactId) {
       (contact) => contact.id !== contactId
     );
     await fs.writeFile(contactsPath, JSON.stringify(filterContacts));
+    console.log("Update contacts:");
+    console.table(filterContacts);
     console.log(`Contact with id "${contactId}" was deleted`);
     return filterContacts;
   } catch (err) {
