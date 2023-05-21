@@ -1,5 +1,6 @@
 const fs = require("fs").promises;
 const path = require("path");
+const { v4: uuidv4 } = require("uuid");
 
 const contactsPath = path.join("./db", "contacts.json");
 
@@ -25,12 +26,24 @@ async function listContacts() {
 // }
 // getContactById("drsAJ4SHPYqZeG-83QTVW");
 
-
-// function addContact(name, email, phone) {
-//   // ...твій код
+// async function addContact(name, email, phone) {
+//   try {
+//     const data = await listContacts();
+//     const updateContacts = await data.push({
+//       id: uuidv4(),
+//       name,
+//       email,
+//       phone,
+//     });
+//     await fs.writeFile(contactsPath, JSON.stringify(data));
+//     console.log(`Contact "${name}" was added to the phonebook`);
+//     return data;
+//   } catch (err) {
+//     console.error(err);
+//   }
 // }
 
-
+// addContact("Iryna Popova", "irina@gmail.com", "(748) 202-5555");
 
 // async function removeContact(contactId) {
 //   try {
