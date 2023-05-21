@@ -1,17 +1,26 @@
 # goit-node-hw-01
 
-# Отримуємо і виводимо весь список контактів у вигляді таблиці (console.table)
-node index.js --action="list"
-https://monosnap.com/file/BBVmTT0kTQXoDswwGH7C4b3wo9Lkwp
+## Отримання та виведення списку контактів
+Для отримання та виведення всього списку контактів у вигляді таблиці виконайте наступну команду:
+__node index.js --action="list"__
 
-# Отримуємо контакт по id
-node index.js --action="get" --id 05olLMgyVQdWRwgKfg5J6
-https://monosnap.com/file/07vAUEiU1Hk8kvPU5wYIsmtsvJZM60
+![Результат](https://monosnap.com/file/BBVmTT0kTQXoDswwGH7C4b3wo9Lkwp)
 
-# Додаємо контакт
-node index.js --action="add" --name Mango --email mango@gmail.com --phone 322-22-22
-https://monosnap.com/file/YUe6ChrtP7mjDCifR4sPTtBuYLfqnY
 
-# Видаляємо контакт
-node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH
-https://monosnap.com/file/wndXkiwgKDSAFBLNlI6SCum9y6OtpS
+## Отримуємо контакт по id
+Для того,щоб отримати контакт по id виконайте команду:
+__node index.js --action="get" --id 05olLMgyVQdWRwgKfg5J6__
+
+![Результат](https://monosnap.com/file/07vAUEiU1Hk8kvPU5wYIsmtsvJZM60)
+
+## Додаємо контакт
+Щоб додати новий контакт до phonebook потрібно виконати наступну команду з новими даними (name,email,phone):
+__node index.js --action="add" --name Mango --email mango@gmail.com --phone 322-22-22__
+
+![Результат](https://monosnap.com/file/YUe6ChrtP7mjDCifR4sPTtBuYLfqnY)
+
+## Видаляємо контакт
+Для видалення потрібно вписати id в наступну команду: 
+__node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH__
+
+![Результат](https://monosnap.com/file/wndXkiwgKDSAFBLNlI6SCum9y6OtpS)
